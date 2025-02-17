@@ -52,8 +52,6 @@ class InvalidJsonTypeException implements Exception {
 class Json {
   final Object? value;
 
-  const Json._(this.value);
-
   /// Create the given [value] as a JSON value.
   ///
   /// This constructor will validate the given object
