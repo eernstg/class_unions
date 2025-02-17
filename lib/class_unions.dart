@@ -4,8 +4,9 @@
 
 // Keep the value around for easier debugging.
 Never _die(Object? value) => throw StateError(
-    "You have encountered a bug in the package 'class_unions'. "
-    "Please report it at github.com!");
+      "You have encountered a bug in the package 'class_unions'. "
+      "Please report it at github.com!",
+    );
 
 /// Emulate the union of the types [X1] and [X2].
 class Union2<X1, X2> {
@@ -100,11 +101,7 @@ class Union3<X1, X2, X3> {
   /// Return type iff the [value] has type [X3].
   bool get is3 => value is X3;
 
-  R split<R>(
-    R Function(X1) on1,
-    R Function(X2) on2,
-    R Function(X3) on3,
-  ) {
+  R split<R>(R Function(X1) on1, R Function(X2) on2, R Function(X3) on3) {
     var v = value;
     if (v is X1) return on1(v);
     if (v is X2) return on2(v);

@@ -1,20 +1,13 @@
 import 'package:class_unions/class_unions.dart';
 import 'package:test/test.dart';
 
-int doSplit(Union2<int, String> u) => u.split(
-      (i) => i,
-      (s) => s.length,
-    );
+int doSplit(Union2<int, String> u) => u.split((i) => i, (s) => s.length);
 
-int? doSplitNamed(Union2<int, String> u) => u.splitNamed(
-      on1: (i) => i,
-      on2: (s) => s.length,
-    );
+int? doSplitNamed(Union2<int, String> u) =>
+    u.splitNamed(on1: (i) => i, on2: (s) => s.length);
 
-int? doSplitNamedOther(Union2<int, String> u) => u.splitNamed(
-      on2: (s) => s.length,
-      onOther: (_) => 42,
-    );
+int? doSplitNamedOther(Union2<int, String> u) =>
+    u.splitNamed(on2: (s) => s.length, onOther: (_) => 42);
 
 void main() {
   test('split', () {

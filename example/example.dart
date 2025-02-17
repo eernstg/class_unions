@@ -6,22 +6,15 @@ import 'package:class_unions/class_unions.dart';
 
 // Use `split` to discriminate: Receive a callback for every case, in order.
 
-int doSplit(Union2<int, String> u) => u.split(
-      (i) => i,
-      (s) => s.length,
-    );
+int doSplit(Union2<int, String> u) => u.split((i) => i, (s) => s.length);
 
 // Use `splitNamed`: Can handle subset of cases, has `onOther`, may return null.
 
-int? doSplitNamed(Union2<int, String> u) => u.splitNamed(
-      on1: (i) => i,
-      on2: (s) => s.length,
-    );
+int? doSplitNamed(Union2<int, String> u) =>
+    u.splitNamed(on1: (i) => i, on2: (s) => s.length);
 
-int? doSplitNamedOther(Union2<int, String> u) => u.splitNamed(
-      on2: (s) => s.length,
-      onOther: (_) => 42,
-    );
+int? doSplitNamedOther(Union2<int, String> u) =>
+    u.splitNamed(on2: (s) => s.length, onOther: (_) => 42);
 
 void main() {
   // We can introduce union typed expressions by calling a constructor.
