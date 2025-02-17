@@ -23,10 +23,6 @@ int? doSplitNamedOther(Union2<int, String> u) => u.splitNamed(
       onOther: (_) => 42,
     );
 
-int? doSplitNamedInvalid(Union2<int, String> u) => u.splitNamed(
-      onInvalid: (_) => -1,
-    );
-
 void main() {
   // We can introduce union typed expressions by calling a constructor.
   // The constructor `UnionN.inK` injects a value of the `K`th type argument
@@ -51,14 +47,4 @@ void main() {
   // Union2<int, String> u2 = Union2.in2(true); // Error.
   // Union2<int, String> u3 = true.u21; // Error.
   // Union2<int, String> u4 = true.u22; // Error.
-
-  // However, we can't prevent the introduction of invalid union values,
-  // because it is always possible to force the type by an explicit cast. This
-  // situation can be handled in a `splitNamed` invocation as shown in
-  // `doSplitNamedInvalid`, and it can be detected using `isValid`.
-  // If it is not detected, `split` will throw.
-  var u = true as Union2<int, String>; // Bad, but no error.
-  print(doSplitNamedInvalid(u)); // '-1'.
-  print(u.isValid); // 'false'.
-  // doSplit(u); // Throws.
 }
