@@ -3,7 +3,7 @@ description: >-
   Simple union types using classes. Types: the union of
   `int` and `String` is `Union2<int, String>`. Values: `42.u21` is
   `42` with type `Union2<int, Never>`.
-version: 1.0.10
+version: 1.0.0
 repository: https://github.com/eernstg/class_unions
 
 environment:
