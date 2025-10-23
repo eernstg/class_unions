@@ -12,7 +12,7 @@ This is a variant of the package [`extension_type_unions`][] that uses classes r
 
 The core difference is that `extension_type_unions` use a static-only approach such that a value of a union type is really the object itself, whereas this package uses a real (reified) wrapper object.
 
-This implies that it is not possible to create (or in any way obtain) a reference to an object of type, say, `Union2<int, String>` whose `value` isn't either an `int` or a `String`. So there are no invalid values of a union type from this package. On the other hard, a value `u` whose type is `Union2<int, String>` does not have any of the operand types; that is, `u is int` and `u is String` are both false, even though `u is Union2<int, String>` is true. This implies that all usages of union types from this package _must_ take an explicit step to retrieve the underlying value, e.g., `if (u.is1) print(u.as1);`.
+This implies that it is not possible to create (or in any way obtain) a reference to an object of type, say, `Union2<int, String>` whose `value` isn't either an `int` or a `String`. So there are no invalid values of a union type from this package. On the other hand, a value `u` whose type is `Union2<int, String>` does not have any of the operand types; that is, `u is int` and `u is String` are both false, even though `u is Union2<int, String>` is true. This implies that all usages of union types from this package _must_ take an explicit step to retrieve the underlying value, e.g., `if (u.is1) print(u.as1);`.
 
 [`extension_type_unions`]: https://github.com/eernstg/extension_type_unions
 
