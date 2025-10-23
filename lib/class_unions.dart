@@ -4,9 +4,9 @@
 
 // Keep the value around for easier debugging.
 Never _die(Object? value) => throw StateError(
-      "You have encountered a bug in the package 'class_unions'. "
-      "Please report it at github.com!",
-    );
+  "You have encountered a bug in the package 'class_unions'. "
+  "Please report it at github.com!",
+);
 
 /// Emulate the union of the types [X1] and [X2].
 class Union2<X1, X2> {
